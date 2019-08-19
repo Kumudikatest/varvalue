@@ -30,7 +30,26 @@
           "memory": 128,
           "layers": []
         },
-        "triggers": []
+        "triggers": [],
+        "customSecurityPolicy": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Resource": "arn:aws:cloud9:us-east-1:::",
+              "Action": [
+                "*"
+              ]
+            },
+            {
+              "Effect": "Allow",
+              "Resource": "arn:aws:clouddirectory:us-east-1::",
+              "Action": [
+                "*"
+              ]
+            }
+          ]
+        }
       }
     },
     "deletedFiles": [],
@@ -41,8 +60,28 @@
     "currentFileId": "8fb402a2-4699-4fe7-be5f-b0977d193fdb",
     "resources": {},
     "customTemplate": {
-      "dialect": null,
-      "definitions": {}
+      "dialect": "CloudFormation",
+      "definitions": {
+        "Resources": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Resource": "arn:aws:cloud9:us-east-1:::",
+              "Action": [
+                "*"
+              ]
+            },
+            {
+              "Effect": "Allow",
+              "Resource": "arn:aws:clouddirectory:us-east-1::",
+              "Action": [
+                "*"
+              ]
+            }
+          ]
+        }
+      }
     },
     "envVariables": [
       {
@@ -73,7 +112,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1566201758240
+    "lastSave": 1566211745561
   },
   "VCS_STATE": {
     "provider": "GitHub",
